@@ -30,29 +30,38 @@ Este repositorio se creó como práctica profesional aplicando conceptos aprendi
 - Page Object Model (POM)
 
 📂 Estructura del proyecto
-
-project/
-│── tests/
-│   ├── test_login.py
-│   ├── test_catalog.py
-│   └── test_cart.py
+```
+PROYECTO/
 │
-│── pages/
-│   ├── login_page.py
+├── data/                      # Datos externos para pruebas
+│   ├── data_login.csv
+│   ├── data_login.json
+│   └── data_login.py
+│
+├── page/                      # Implementación del Page Object Model
+│   ├── cart_page.py
+│   ├── checkout_complete_page.py
+│   ├── checkout_page.py
 │   ├── inventory_page.py
-│   └── cart_page.py
+│   └── login_page.py
 │
-│── utils/
-│   ├── helpers.py
-│   └── driver_factory.py
+├── reports/                   # Reportes HTML generados por Pytest
 │
-│── screenshots/   (se genera automáticamente en fallos)
-│── reports/       (se genera con pytest-html)
+├── screenshots/               # Capturas automáticas de fallos
 │
-│── requirements.txt
-│── conftest.py
-│── README.md
-
+├── test/                      # Pruebas automatizadas
+│   ├── conftest.py
+│   ├── test_cart_page.py
+│   ├── test_checkout_complete_page.py
+│   ├── test_checkout_page.py
+│   ├── test_inventory_page.py
+│   └── test_login_page.py
+│
+└── utils/                     # Utilidades y helpers
+    ├── faker.py
+    ├── helpers.py
+    └── example.csv
+```
 📥 Instalación de dependencias
 
 1- Cloná el repositorio:
