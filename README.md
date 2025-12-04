@@ -92,6 +92,7 @@ En este proyecto, cuando una prueba falla, se guarda automáticamente una captur
 
 El comportamiento se maneja desde conftest.py:
 
+```
 @pytest.hookimpl(hookwrapper=True)
 def pytest_runtest_makereport(item, call):
     outcome = yield
@@ -100,6 +101,7 @@ def pytest_runtest_makereport(item, call):
         driver = item.funcargs.get("driver")
         if driver:
             driver.save_screenshot(f"screenshots/{item.name}.png")
+```
 
 📊 ¿Cómo interpretar los reportes HTML?
 
